@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python笔记 - cookie</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Python笔记
+
+前言，python里莫得define，所以很多程序我打算只写一部分，不写全了
+
+
+一些基本的数组&amp;#x2F;链表本笔记中将全部使用增删改查的方式展示
+增: list.append,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="cookie" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="python笔记 - cookie"/>
+    <meta name="twitter:description" content="Python笔记
+
+前言，python里莫得define，所以很多程序我打算只写一部分，不写全了
+
+
+一些基本的数组&amp;#x2F;链表本笔记中将全部使用增删改查的方式展示
+增: list.append,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="cookie"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="python笔记 - cookie"/>
+    <meta property="og:description" content="Python笔记
+
+前言，python里莫得define，所以很多程序我打算只写一部分，不写全了
+
+
+一些基本的数组&amp;#x2F;链表本笔记中将全部使用增删改查的方式展示
+增: list.append,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">cookie</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://binggan23.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python笔记</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python笔记</h1>
+        <div class="stuff">
+            <span>一月 30, 2026</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Python笔记"><a href="#Python笔记" class="headerlink" title="Python笔记"></a>Python笔记</h1><hr>
+<blockquote>
+<p>前言，python里莫得define，所以很多程序我打算只写一部分，不写全了</p>
+</blockquote>
+<hr>
+<h2 id="一些基本的数组-链表"><a href="#一些基本的数组-链表" class="headerlink" title="一些基本的数组&#x2F;链表"></a>一些基本的<strong>数组&#x2F;链表</strong></h2><p>本笔记中将全部使用<strong>增删改查的方式</strong>展示</p>
+<p><strong>增</strong>: list.append(值)</p>
+<p><strong>删</strong>: list.pop(位置) <strong>不能多选位置？</strong></p>
+<p>list.remove(值)<strong>删除第一个出现的该值</strong> </p>
+<p>del list[0]删除开头<strong>一般给list作为tree或者队列的时候使用</strong></p>
+<p>del可以拓展多选下标</p>
+<p>del list[0:2]即为删除下标0-1</p>
+<p><strong>改</strong>: 嘶，直接赋值吧</p>
+<p><strong>查</strong>: list.index(值)<strong>查询第一个出现的</strong>,注意index如果没查到则报错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">dq = deque([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4.1</span>])</span><br><span class="line">dq.popleft();dq.appendleft(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(dq.index(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;没有&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>&#x2F;特殊的查询:if not list(查询是否为空的，算是一种符合ACM模式?)</p>
+<p><strong>排</strong>: list.sort()内置的一种方法，或者新列表 &#x3D; sorted(列表)<strong>不改变原列表的一种函数</strong></p>
+<p><strong>反</strong>: list.reverse()<img src="https://so1.360tres.com/t0160370fe30b4fdff7.png" alt="如图所示.png1 (369×552)" style="zoom:33%;" /></p>
+<p><strong>计</strong>: count神教，count(查询数量的值)&#x2F;len查询个数</p>
+<hr>
+<h2 id="队列-queue-双端队列-deque"><a href="#队列-queue-双端队列-deque" class="headerlink" title="队列(queue &#x2F; 双端队列 deque)"></a>队列(queue &#x2F; 双端队列 deque)</h2><p><strong>queue</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line">q = Queue()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>+<span class="number">1</span>):</span><br><span class="line">    q.put(i)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">    <span class="built_in">print</span>(q.get(),end=<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>deque</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">dq = deque([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="built_in">print</span>(dq)</span><br></pre></td></tr></table></figure>
+
+<h3 id="queue"><a href="#queue" class="headerlink" title="queue:"></a>queue:</h3><p><strong>增</strong>: q.put(值)</p>
+<p><strong>删</strong>: q.get顺手的事，输出并移出，<strong>先进先出</strong></p>
+<p><strong>改</strong>: 应该是不能改</p>
+<p><strong>查</strong>: empty()查看是否为空，如果是空输出True</p>
+<p><strong>排</strong>: 无</p>
+<p><strong>反</strong>: 无</p>
+<p><strong>计</strong>: q.qsize()</p>
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p><strong>增</strong>: dq.append(值)在<strong>队尾</strong>增，dq.appendleft(值)在<strong>队头</strong>增，deque中其他的同理</p>
+<p><strong>删</strong>: dq.pop()队尾，dq.popleft()队头</p>
+<p><strong>改</strong>: 赋值</p>
+<p><strong>查</strong>: if dq判断是否为空以及index</p>
+<p><strong>排</strong>: sorted方法</p>
+<p><strong>反</strong>: reverse</p>
+<p><strong>计</strong>: len</p>
+<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2><h3 id="也就是最优数据一直位于队头PriorityQueue"><a href="#也就是最优数据一直位于队头PriorityQueue" class="headerlink" title="也就是最优数据一直位于队头PriorityQueue"></a>也就是最优数据一直位于队头PriorityQueue</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> PriorityQueue</span><br><span class="line">pq = PriorityQueue()</span><br><span class="line">pq.put((<span class="number">10</span>, <span class="string">&quot;低优先&quot;</span>))  </span><br><span class="line">pq.put((<span class="number">5</span>, <span class="string">&quot;中优先&quot;</span>))</span><br><span class="line">pq.put((<span class="number">0</span>, <span class="string">&quot;高优先&quot;</span>))</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> pq.empty():</span><br><span class="line">    curr_priority,curr_value = pq.get()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;当前优先级:&quot;</span>+<span class="string">f&quot;<span class="subst">&#123;curr_priority&#125;</span>&quot;</span>+<span class="string">&#x27;\n&#x27;</span>+<span class="string">&quot;当前值:&quot;</span>+<span class="string">f&quot;<span class="subst">&#123;curr_value&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
