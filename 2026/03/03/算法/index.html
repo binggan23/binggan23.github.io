@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python算法(没完结) - cookie</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="排序冒泡&amp;#x2F;选择我的笔记里暂时不写这俩
+
+插入第一个元素看作已经排序好的了，然后从前往后遍历
+可以想象成扑克牌，我们拿出来一张往前比较，到他的位置插进去
+这里i代表我们的扑克牌
+j代表正在进,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="cookie" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="python算法(没完结) - cookie"/>
+    <meta name="twitter:description" content="排序冒泡&amp;#x2F;选择我的笔记里暂时不写这俩
+
+插入第一个元素看作已经排序好的了，然后从前往后遍历
+可以想象成扑克牌，我们拿出来一张往前比较，到他的位置插进去
+这里i代表我们的扑克牌
+j代表正在进,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="cookie"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="python算法(没完结) - cookie"/>
+    <meta property="og:description" content="排序冒泡&amp;#x2F;选择我的笔记里暂时不写这俩
+
+插入第一个元素看作已经排序好的了，然后从前往后遍历
+可以想象成扑克牌，我们拿出来一张往前比较，到他的位置插进去
+这里i代表我们的扑克牌
+j代表正在进,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">cookie</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://binggan23.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python算法(没完结)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python算法(没完结)</h1>
+        <div class="stuff">
+            <span>三月 03, 2026</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="冒泡-选择"><a href="#冒泡-选择" class="headerlink" title="冒泡&#x2F;选择"></a>冒泡&#x2F;选择</h2><pre><code>我的笔记里暂时不写这俩
+</code></pre>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><pre><code>第一个元素看作已经排序好的了，然后从前往后遍历
+可以想象成扑克牌，我们拿出来一张往前比较，到他的位置插进去
+这里i代表我们的扑克牌
+j代表正在进行比较的牌
+但是这里就有一个问题，我们假设第一个元素是排好的了，可是如果第一个元素没有排好怎么办
+所以要在i对应的循环内再添加俩变量代表值和循环结束后插入的位置
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span> , sys.stdin.readline().split()))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">    value = a[i]</span><br><span class="line">    insert_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i - <span class="number">1</span> , -<span class="number">1</span> , -<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> a[j] &gt; value:</span><br><span class="line">            a[j + <span class="number">1</span>] = a[j]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            insert_idx = j + <span class="number">1</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    a[insert_idx] = value</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27; &#x27;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span> , a)))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><pre><code>首先找一个基准值(一般是left)
+把列表分成3部分 小于基准，大于基准，等于基准
+然后左右再执行该策略 
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">huafen</span>(<span class="params">a,left,right</span>):</span><br><span class="line">    idx = left + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (left+<span class="number">1</span>,right+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> a[i] &lt; a[left]:</span><br><span class="line">            a[i],a[idx] = a[idx],a[i]</span><br><span class="line">            idx += <span class="number">1</span></span><br><span class="line">    a[idx-<span class="number">1</span>],a[left] = a[left],a[idx-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> idx - <span class="number">1</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">qs</span>(<span class="params">a,left,right</span>):</span><br><span class="line">    <span class="keyword">if</span> left &lt; right:</span><br><span class="line">        mid=huafen(a,left,right)</span><br><span class="line">        <span class="comment">#a[left:mid],a[mid],a[mid:right]</span></span><br><span class="line">        qs(a,left,mid-<span class="number">1</span>)</span><br><span class="line">        <span class="comment">#不要拍mid</span></span><br><span class="line">        qs(a,mid+<span class="number">1</span>,right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, sys.stdin.readline().split()))</span><br><span class="line">qs(a,<span class="number">0</span>,n-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27; &#x27;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>,a)))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">a,b</span>):</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(a)!=<span class="number">0</span> <span class="keyword">and</span> <span class="built_in">len</span>(b)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> a[<span class="number">0</span>] &lt; b[<span class="number">0</span>]:</span><br><span class="line">            result.append(a.pop(<span class="number">0</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result.append(b.pop(<span class="number">0</span>))</span><br><span class="line">    result.extend(a)</span><br><span class="line">    result.extend(b)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">merge_sort</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(a) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    mid = <span class="built_in">len</span>(a)//<span class="number">2</span></span><br><span class="line">    left = merge_sort(a[:mid])</span><br><span class="line">    right = merge_sort(a[mid:])</span><br><span class="line">    <span class="keyword">return</span> merge(left,right)</span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, sys.stdin.readline().split()))</span><br><span class="line">a = merge_sort(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27; &#x27;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, a)))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><pre><code>初始化k个桶
+遍历数据到桶中
+桶单独排序
+拼接桶
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tongsort</span>(<span class="params">a,bucketcount</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    a是输入的数据</span></span><br><span class="line"><span class="string">    bucketcount是桶的个数</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment">#最大值最小数</span></span><br><span class="line">    min_a,max_a = <span class="built_in">min</span>(a),<span class="built_in">max</span>(a)</span><br><span class="line">    <span class="comment">#桶大小</span></span><br><span class="line">    bucketsize = (max_a - min_a + <span class="number">1</span>) // bucketcount</span><br><span class="line">    <span class="comment">#结果</span></span><br><span class="line">    res = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(bucketcount + <span class="number">1</span>)]<span class="comment">#这个是一个列表作为元素的列表</span></span><br><span class="line">    <span class="comment">#给桶里输入数据</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> a:</span><br><span class="line">        idx = (x - min_a) // bucketsize</span><br><span class="line">        <span class="comment">#这个idx就是我输入的数据应该在什么位置</span></span><br><span class="line">        <span class="comment">#当前的x和min做比较，然后做出的比较和每个桶的范围(大小)相除得来</span></span><br><span class="line">        res[idx].append(x)</span><br><span class="line">    <span class="comment">#开始给每个桶里的数据排序</span></span><br><span class="line">    ans = []</span><br><span class="line">    <span class="keyword">for</span> res_x <span class="keyword">in</span> res:</span><br><span class="line">        res_x.sort()</span><br><span class="line">        ans += res_x</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,sys.stdin.readline().split()))</span><br><span class="line">a = tongsort(a,<span class="built_in">min</span>(<span class="number">10000</span>,n))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27; &#x27;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>,a)))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h1><h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><pre><code>一般我们关注的是最坏的时间复杂度 O(f(n))
+如果同时存在多项，只考虑指数级的最高项
+O(n^2+n)==O(n^2)
+然后也删除指数级的常数
+比如
+O(n*n/2-n+1)==O(n*n)
+</code></pre>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><pre><code>- 确定解空间(一维、二维)
+- 确定空间的边界(每个变量的最小值、最大值、步长)
+- 估算时间复杂度
+- 如果上一步无法通过则减小枚举空间、变换枚举顺序重新迭代
+</code></pre>
+<h3 id="典型"><a href="#典型" class="headerlink" title="典型"></a>典型</h3><pre><code>百钱买百鸡
+</code></pre>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>   理解:<br>     把一个大的问题转化为一个规模更小但是相似的问题<br>     比如一个n的问题，那我只需要知道n-1的问题，n-1就是n-2的问题，一直到一个最小的深度也就是出口。<br>   典型：<br>     递归求阶乘</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fd</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">if</span> a &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> a * fd(a-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(fd(n))</span><br></pre></td></tr></table></figure>
+<pre><code>典例:
+  汉诺塔
+  这个要拆解
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">move</span>(<span class="params">n,a,b,c</span>):</span><br><span class="line">    <span class="comment">#如果没有柱子了就停下</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="comment">#反复执行如下操作</span></span><br><span class="line">    <span class="comment">#从A柱子挪到B柱子，通过柱子C</span></span><br><span class="line">    move(n-<span class="number">1</span>,a,c,b)</span><br><span class="line">    <span class="comment">#挪完了看一下结果</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;a&#125;</span>-&gt;<span class="subst">&#123;c&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="comment">#从B柱子挪到C柱子，通过柱子A</span></span><br><span class="line">    move(n-<span class="number">1</span>,b,a,c)</span><br><span class="line">move(<span class="number">3</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h2><pre><code>python内部就有对应的函数
+bin()转二进制
+oct()转八进制
+hex()转十六进制
+</code></pre>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><pre><code>对于一个长度为n的列表a，前缀和为sum[i]=a[0]+a[1]+....
+比如a=[1,3,4,2,5],sum=[1,4,8,10,15]
+前缀和的性质:
+  sum[i] = sum[i - 1] + a[i]
+  a[l] + ... a[r] = sum[r] - sum[l-1]
+主要作用是快速求l-r之间的和
+</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
