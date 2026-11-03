@@ -2,7 +2,7 @@
 
 个人档案式主页 — constructivist / non-objective / Soviet-print aesthetic, built with React 19, three.js, motion and Base UI.
 
-**Live:** https://binggan23.github.io/
+**Live:** https://lookcookie.dpdns.org/
 
 ## Stack
 

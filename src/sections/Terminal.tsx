@@ -10,7 +10,7 @@ const SESSION: Line[] = [
   { prompt: true, text: "dsh --agent neo --workspace ./site", out: "▸ harness ready · skills 12 · mcp servers 3" },
   { prompt: true, text: "neo-skill plan --goal 'ship personal page'", out: "▸ state machine: DRAFT → REVIEW → GATED → SHIPPED" },
   { prompt: true, text: "docker compose up -d --build", out: "✔ web  healthy  443/tcp  0.8s" },
-  { prompt: true, text: "curl -sI https://binggan23.github.io", out: "HTTP/2 200 · cf-cache-status: HIT" },
+  { prompt: true, text: "curl -sI https://lookcookie.dpdns.org", out: "HTTP/2 200 · cf-cache-status: HIT" },
 ];
 
 export default function Terminal() {
