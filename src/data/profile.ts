@@ -38,7 +38,7 @@ export const profile = {
     dshBrowser: "https://github.com/omdsh-dev/dsh-browser",
   },
   stats: [
-    { value: 8, suffix: "", label: "奖项 / 认证", labelRu: "НАГРАДЫ" },
+    { value: 9, suffix: "", label: "奖项 / 认证", labelRu: "НАГРАДЫ" },
     { value: 6, suffix: "", label: "开源项目", labelRu: "ПРОЕКТЫ" },
     { value: 3, suffix: "+", label: "主干语言", labelRu: "ЯЗЫКИ" },
     { value: 2, suffix: "", label: "在读学历", labelRu: "ОБРАЗОВАНИЕ" },
@@ -203,6 +203,7 @@ export const honors: Honor[] = [
   { id: "h4", year: "2026", title: "华为云 Autotuner 自动调优认证", org: "Huawei Cloud", level: "认证", kind: "CERTIFICATION" },
   { id: "h5", year: "2026", title: "山东省技能大赛 · 人工智能赛项", org: "山东省人力资源和社会保障厅", level: "银奖", kind: "COMPETITION" },
   { id: "h6", year: "2026", title: "山东省「技能兴鲁」职业技能大赛", org: "山东省", level: "学生组 · 一等奖", kind: "COMPETITION" },
+  { id: "h9", year: "2026", title: "山东省大学生数学建模竞赛", org: "山东省", level: "省赛 · 二等奖", kind: "COMPETITION" },
   { id: "h7", year: "2025", title: "泰安市技能大赛 · 电子商务", org: "泰安市", level: "二等奖", kind: "COMPETITION" },
   { id: "h8", year: "2025", title: "大学生创业就业协会 · 就业实践部", org: "山东工程职业技术大学", level: "副部长", kind: "LEADERSHIP" },
 ];
