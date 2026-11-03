@@ -269,9 +269,10 @@ export default function HeroStage({ className, onTelemetry, onReady }: HeroStage
       camera.aspect = wd / ht;
       camera.updateProjectionMatrix();
       const small = wd < 760;
-      world.scale.setScalar(small ? 0.62 : wd < 1180 ? 0.86 : 1);
-      world.position.x = small ? 0.15 : wd < 1180 ? 0.9 : 1.5;
-      world.position.y = small ? 1.45 : 0.25;
+      const wide = wd >= 1700;
+      world.scale.setScalar(small ? 0.56 : wd < 1180 ? 0.82 : 1);
+      world.position.x = small ? 0.2 : wd < 1180 ? 1.25 : wd < 1500 ? 1.5 : wide ? 2.2 : 1.75;
+      world.position.y = small ? 1.7 : 0.25;
     };
     resize();
     const ro = new ResizeObserver(resize);
