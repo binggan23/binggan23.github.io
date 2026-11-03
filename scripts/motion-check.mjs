@@ -1,0 +1,14 @@
+import { chromium } from "playwright-core";
+const browser = await chromium.launch({ executablePath: "/home/cookie/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome", args: ["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+const page = await ctx.newPage();
+await page.goto("http://127.0.0.1:4173/", { waitUntil: "networkidle" });
+await page.waitForTimeout(3200);
+await page.screenshot({ path: ".screens/mc-a.png" });
+await page.waitForTimeout(1400);
+await page.screenshot({ path: ".screens/mc-b.png" });
+await page.evaluate(() => window.scrollTo({ top: 500, behavior: "instant" }));
+await page.waitForTimeout(900);
+await page.screenshot({ path: ".screens/mc-c.png" });
+await browser.close();
+console.log("captured");

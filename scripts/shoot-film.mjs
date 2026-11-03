@@ -1,0 +1,26 @@
+import { chromium } from "playwright-core";
+const browser = await chromium.launch({ executablePath: "/home/cookie/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome", args: ["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
+const ctx = await browser.newContext({ viewport: { width: 1600, height: 1000 } });
+const page = await ctx.newPage();
+const errs = [];
+page.on("pageerror", (e) => errs.push(e.message));
+page.on("console", (m) => { if (m.type() === "error") errs.push("console: " + m.text()); });
+await page.goto("http://127.0.0.1:4173/", { waitUntil: "networkidle" });
+await page.waitForTimeout(1200);
+await page.screenshot({ path: ".screens/x-intro.png" });
+await page.waitForTimeout(2600);
+await page.screenshot({ path: ".screens/x-hero.png" });
+// scroll into the film section
+const filmTop = await page.evaluate(() => document.getElementById("film")?.offsetTop ?? 0);
+await page.evaluate((y) => window.scrollTo({ top: y, behavior: "instant" }), filmTop - 100);
+await page.waitForTimeout(900);
+await page.screenshot({ path: ".screens/x-film-0.png" });
+await page.evaluate((y) => window.scrollTo({ top: y, behavior: "instant" }), filmTop + 900);
+await page.waitForTimeout(1100);
+await page.screenshot({ path: ".screens/x-film-1.png" });
+await page.evaluate((y) => window.scrollTo({ top: y, behavior: "instant" }), filmTop + 1900);
+await page.waitForTimeout(1100);
+await page.screenshot({ path: ".screens/x-film-2.png" });
+console.log("errors:", errs.length ? errs.slice(0, 4) : "none");
+console.log("height", await page.evaluate(() => document.body.scrollHeight));
+await browser.close();

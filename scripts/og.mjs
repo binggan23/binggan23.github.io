@@ -1,0 +1,12 @@
+import { chromium } from "playwright-core";
+const browser = await chromium.launch({ executablePath: "/home/cookie/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome", args: ["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
+const ctx = await browser.newContext({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
+const page = await ctx.newPage();
+await page.goto("http://127.0.0.1:4173/", { waitUntil: "networkidle" });
+await page.waitForTimeout(6000);
+await page.addStyleTag({ content: ".hud,.gridlines{display:none!important}" });
+await page.waitForTimeout(300);
+await page.screenshot({ path: "public/og.png" });
+await ctx.close();
+await browser.close();
+console.log("og written");

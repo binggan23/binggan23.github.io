@@ -1,0 +1,48 @@
+:root {
+  /* ——— olive dark / acid lime ——— */
+  --paper: #0b0f04;
+  --paper-2: #111707;
+  --paper-3: #1a220c;
+  --ink: #e8eed2;
+  --ink-2: #bcc79b;
+  --ink-3: #818d5e;
+  --red: #c8f751;
+  --red-deep: #a3d423;
+  --ochre: #f0ecd8;
+  --line: rgba(223, 230, 196, 0.18);
+  --line-soft: rgba(223, 230, 196, 0.09);
+  --line-strong: rgba(223, 230, 196, 0.45);
+
+  /* ——— type ——— */
+  --f-display: "Unbounded Variable", "Unbounded", system-ui, sans-serif;
+  --f-cond: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+  --f-serif: "Instrument Serif", "Times New Roman", serif;
+  --f-cjk: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+
+  /* ——— space ——— */
+  --pad: clamp(18px, 4vw, 72px);
+  --gutter: clamp(14px, 2.2vw, 36px);
+  --rail: clamp(44px, 4.6vw, 76px);
+  --section-y: clamp(96px, 13vh, 190px);
+
+  /* ——— motion ——— */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.9s;
+  --glow: 0 0 60px rgba(198, 245, 61, 0.26);
+
+  /* ——— z ——— */
+  --z-bg: 0;
+  --z-content: 10;
+  --z-rail: 60;
+  --z-cursor: 200;
+  --z-toast: 300;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --rail: 0px;
+  }
+}
