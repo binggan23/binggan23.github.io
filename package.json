@@ -9,7 +9,8 @@
     "preview": "vite preview --port 4173 --host 127.0.0.1",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "shoot": "node scripts/shoot.mjs",
-    "og": "node scripts/og.mjs"
+    "og": "node scripts/og.mjs",
+    "audio:test": "node scripts/audio-test2.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

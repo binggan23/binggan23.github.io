@@ -11,7 +11,7 @@
 - motion 14 — scroll-linked choreography, pinned film stage
 - lenis — smooth scroll
 - Base UI — dialog/tooltip primitives
-- WebAudio — fully synthesized UI sounds (no audio assets)
+- WebAudio — fully synthesized UI sounds, plus a looping music bed (`public/audio/music-bed.mp3`) with a hand-rolled fade/duck ramp
 
 ## Scripts
 
@@ -31,7 +31,7 @@ src/
   components/   ReactorStage, FilmField, InkField, Intro, Emblem, Cursor, Hud, ...
   sections/     Hero, Dossier, Manifesto, Interlude, Film, Arsenal, Terminal, Archive, Honors, Path, Contact
   styles/       tokens + base + per-band layers (site.css ... site6.css)
-  lib/          sound engine, hooks
+  lib/          sound engine, music bed, hooks
   data/         profile.ts — single source of truth for copy
 ```
 
