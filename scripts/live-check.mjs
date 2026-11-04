@@ -1,0 +1,25 @@
+import { chromium } from "playwright-core";
+const URL = "https://lookcookie.dpdns.org/";
+const browser = await chromium.launch({ executablePath: "/home/cookie/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome", args: ["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+const page = await ctx.newPage();
+const errs = [];
+page.on("pageerror", (e) => errs.push("pageerror: " + e.message));
+page.on("console", (m) => { if (m.type() === "error") errs.push("console: " + m.text()); });
+page.on("requestfailed", (r) => errs.push("reqfail: " + r.url()));
+await page.goto(URL, { waitUntil: "networkidle", timeout: 60000 });
+await page.waitForTimeout(6000);
+console.log("title:", await page.title());
+console.log("lock:", await page.evaluate(() => document.documentElement.className));
+await page.screenshot({ path: ".screens/live-hero.png" });
+await page.mouse.click(720, 620);
+await page.waitForTimeout(2500);
+console.log("audio:", JSON.stringify(await page.evaluate(() => {
+  const a = document.querySelector("audio");
+  return { exists: Boolean(a), paused: a?.paused, vol: Number((a?.volume ?? 0).toFixed(2)), t: Number((a?.currentTime ?? 0).toFixed(1)), src: a?.getAttribute("src") };
+})));
+await page.evaluate(() => window.scrollTo(0, 4400));
+await page.waitForTimeout(2500);
+await page.screenshot({ path: ".screens/live-film.png" });
+console.log("errors:", errs.length ? errs.slice(0, 5) : "none");
+await browser.close();
